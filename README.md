@@ -63,10 +63,12 @@
   <tr>
     <td align="center"><a href="https://github.com/DongChyeon"><img src="https://avatars.githubusercontent.com/u/64844115?v=4" width="100px;" alt=""/>
     <td align="center"><a href="https://github.com/MatchaKim"><img src="https://avatars.githubusercontent.com/u/121302951?v=4" width="100px;" alt=""/>
+    <td align="center"><a href="https://github.com/Roel4990"><img src="https://avatars.githubusercontent.com/u/93641814?v=4" width="100px;" alt=""/>
   </tr>
-    <tr>
+  <tr>
     <td align="center"><a href="https://github.com/DongChyeon" title="Code">DongChyeon</a></td>
     <td align="center"><a href="https://github.com/MatchaKim" title="Code">MatchaKim</a></td>
+    <td align="center"><a href="https://github.com/Roel4990" title="Code">Roel4990</a></td>
   </tr>
 </table>
 
