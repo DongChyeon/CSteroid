@@ -1,5 +1,5 @@
 ---
-date: 2025-07-07
+date: 2025-07-24
 user: Roel4990
 topic: GraphQL과 데이터 소비의 변화
 ---
