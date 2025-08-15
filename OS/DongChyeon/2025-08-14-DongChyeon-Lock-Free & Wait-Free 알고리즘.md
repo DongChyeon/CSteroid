@@ -37,7 +37,7 @@ topic: Lock-Free & Wait-Free 알고리즘
 
 ### Lock-based 방식
 
-![Lock-based](assets/lock_free.png)
+![Lock-based](assets/lock_based.png)
 
 - 스레드가 공유 자원 접근 전 락 획득 -> 락 해제 전까지 다른 스레드는 대기
 - 대표 예: Mutex, Semaphore
@@ -45,7 +45,7 @@ topic: Lock-Free & Wait-Free 알고리즘
 
 ### Lock-Free 방식
 
-![Lock-free](assets/lock_based.png)
+![Lock-free](assets/lock_free.png)
 
 - 락 없이, CAS 같은 원자 연산으로 상태를 갱신
 - CAS 실패 시 재시도, 성공한 스레드는 진행 지속
@@ -108,3 +108,19 @@ boolean CAS(addr, expected, newValue) {
 4. 이제 CAS(3, 6) 수행 -> 예상값 3이 맞으므로 성공 -> X = 6
 5. 하지만 실제로는 X가 8에서 3으로 변경된 후 다시 3에서 6으로 변경된 상태
 6. 문제의 핵심: 값이 같아도 의미적으로 완전히 다른 상태일 수 있음
+
+해당 문제를 스택의 head 값을 갱신하는 시나리오에 대입하자면
+
+1. Thread 1이 스택의 head를 읽음 -> 현재 head = NodeA
+   - CAS의 예상값(expected)으로 NodeA를 기억해 둠
+2. Thread 2가 먼저 실행되어 pop 수행
+   - head = NodeB로 변경 (NodeA는 pop되어 메모리 풀에 반환됨)
+3. Thread 2가 push 수행
+   - 메모리 풀에서 재사용된 NodeA 객체를 다시 head로 삽입
+   - 하지만 이 NodeA는 처음의 NodeA와 논리적으로 다른 객체 (value나 next 포인터가 변경됨)
+4. Thread 1이 CAS(head = NodeA -> NodeX) 시도
+   - 현재 head의 물리적 주소가 여전히 NodeA이므로 CAS 성공
+   - Thread 1은 "내가 처음 읽었던 NodeA"라고 착각하고 다음 포인터를 따라 진행
+5. 문제 발생
+   - NodeA 내부 값과 next 포인터는 이미 바뀌어 있어 스택 무결성이 깨짐
+   - 잘못된 노드를 pop하거나, 이미 다른 스레드가 사용 중인 데이터를 참조하게 되어 데이터 오염 또는 크래시 발생 가능
