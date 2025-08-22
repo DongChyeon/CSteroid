@@ -96,6 +96,20 @@
           <sub><b>Roel4990</b></sub>
         </a>
       </td>
+      <td align="center">
+        <a href="https://github.com/tristanjung1006">
+          <img src="https://avatars.githubusercontent.com/u/62244340?v=4" width="100px;" alt="tristanjung1006 profile"/>
+          <br/>
+          <sub><b>tristanjung1006</b></sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Ywoosang">
+          <img src="https://avatars.githubusercontent.com/u/68385605?v=4" width="100px;" alt="Ywoosang profile"/>
+          <br/>
+          <sub><b>Ywoosang</b></sub>
+        </a>
+      </td>
     </tr>
   </table>
 </p>
