@@ -137,4 +137,4 @@ fun <T> myersEditDistance(
    - 삭제/삽입 같은 연산은 PostponedUpdate 큐에 임시로 보관
    - 이후 다른 연산에서 동일한 아이템을 만나면 매칭해 move로 승격하거나, 끝까지 매칭되지 않으면 remove/insert로 확정
    - 이 과정을 통해 이미 수행된 삽입/삭제로 인한 인덱스 변화를 보정하면서
-   - notiftyItemRemoved/Inserted/Moved/Changed를 정확한 위치에 최소 호출로 디스패치
+   - notifyItemRemoved/Inserted/Moved/Changed를 정확한 위치에 최소 호출로 디스패치
