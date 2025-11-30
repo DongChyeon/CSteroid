@@ -31,7 +31,7 @@ topic: "Linux 파일 디스크립터 개념"
 [커널 VFS Layer → 실제 파일 시스템]
 ```
 
-![](images/bbb14192.png)
+![](images/image.png)
 
 1. **FD Table**
 
