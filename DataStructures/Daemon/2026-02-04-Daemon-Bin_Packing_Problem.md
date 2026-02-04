@@ -1,7 +1,7 @@
 ---
 date: 2026-02-04
 user: Daemon
-topic: Bin Packing Problem
+topic: "Bin Packing Problem"
 ---
 
 # Bin Packing Problem / 벽지 로스율 최소화 알고리즘 정리
